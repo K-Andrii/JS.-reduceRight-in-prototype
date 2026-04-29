@@ -1,0 +1,20 @@
+## IDE та редактори
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+## Системні файли (Windows та Linux)
+Thumbs.db
+desktop.ini
+ehthumbs.db
+*~
+
+## Логи та тимчасові файли
+*.log
+*.tmp
+temp/
+out/
+
+node_modules/
