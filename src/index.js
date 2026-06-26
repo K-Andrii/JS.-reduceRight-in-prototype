@@ -54,12 +54,12 @@ function myUnshift(...args) {
 function myConcat(...args) {
     let result = new MyArray(...this);
     args.forEach((element) => {
-        if(Array.isArray(element)){
-            result.push(element)
-        } else {
+        if(Array.isArray(element) || element instanceof MyArray){
             element.forEach((subElement) => {
                 result.push(subElement)
             })
+        } else {
+            result.push(element)
         }
     })
     return result;
