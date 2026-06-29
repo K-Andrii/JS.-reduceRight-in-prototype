@@ -52,7 +52,8 @@ function myUnshift(...args) {
 }
 
 function myConcat(...args) {
-    let result = new MyArray(...this);
+    let result = new MyArray();
+    this.forEach(item => result.push(item));
     args.forEach((element) => {
         if(Array.isArray(element) || element instanceof MyArray){
             element.forEach((subElement) => {
@@ -129,7 +130,7 @@ function mySort(callback){
         for (let j = 0; j < this.length - 1 - i; j++){
             let a = this[j];
             let b = this[j + 1];
-            if(callback.call(a, b) > 0) [this[j], this[j+1]] = [this[j+1], this[j]];
+            if(callback(a, b) > 0) [this[j], this[j+1]] = [this[j+1], this[j]];
         }
     }
 
